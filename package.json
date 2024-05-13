@@ -1,0 +1,32 @@
+{
+  "name": "@apiverve/spamdetector",
+  "version": "1.0.0",
+  "description": "Spam Detector is a simple tool for detecting spam in a text. It returns the spam score and the spam label.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apiverve/spamdetector-API.git"
+  },
+  "keywords": [
+    "spam detector"," spam detection"," spam detect api"," spam detector api"," spam detection api"," spam detect api"
+  ],
+  "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apiverve/spamdetector-API/issues"
+  },
+  "homepage": "https://github.com/apiverve/spamdetector-API",
+  "devDependencies": {
+    "mocha": "^2.3.4",
+    "chai": "^3.4.1",
+    "dotenv": "^2.0.0"
+  },
+  "dependencies": {
+    "node-fetch": "3.3.2",
+    "promise": "^7.1.1",
+    "request": "^2.69.0"
+  }
+}
