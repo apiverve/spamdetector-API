@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/spamdetector",
-  "version": "1.0.2",
-  "description": "Spam Detector is a simple tool for detecting spam in a text. It returns the spam score and the spam label.",
+  "version": "1.0.3",
+  "description": "Spam Detector is a simple tool for detecting spam in a text. It utilize an email address or IP address to validate the given text against the spam database.",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
