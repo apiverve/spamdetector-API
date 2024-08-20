@@ -81,7 +81,8 @@ api.execute(query, function (error, data) {
       "region": "DL"
     },
     "parsed": true
-  }
+  },
+  "code": 200
 }
 ```
 
