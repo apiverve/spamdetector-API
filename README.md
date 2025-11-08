@@ -1,5 +1,4 @@
-Spam Detector API
-============
+# Spam Detector API
 
 Spam Detector is a simple tool for detecting spam in a text. It utilize an email address or IP address to validate the given text against the spam database.
 
@@ -7,56 +6,64 @@ Spam Detector is a simple tool for detecting spam in a text. It utilize an email
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Javascript Wrapper for the [Spam Detector API](https://apiverve.com/marketplace/api/spamdetector)
+This is a Javascript Wrapper for the [Spam Detector API](https://apiverve.com/marketplace/spamdetector)
 
 ---
 
 ## Installation
-	npm install @apiverve/spamdetector --save
+
+Using npm:
+```shell
+npm install @apiverve/spamdetector
+```
+
+Using yarn:
+```shell
+yarn add @apiverve/spamdetector
+```
 
 ---
 
 ## Configuration
 
-Before using the spamdetector API client, you have to setup your account and obtain your API Key.  
+Before using the Spam Detector API client, you have to setup your account and obtain your API Key.
 You can get it by signing up at [https://apiverve.com](https://apiverve.com)
 
 ---
 
-## Usage
+## Quick Start
 
-The Spam Detector API documentation is found here: [https://docs.apiverve.com/api/spamdetector](https://docs.apiverve.com/api/spamdetector).  
+[Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart)
+
+The Spam Detector API documentation is found here: [https://docs.apiverve.com/ref/spamdetector](https://docs.apiverve.com/ref/spamdetector).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
-```
-var spamdetectorAPI = require('@apiverve/spamdetector');
-var api = new spamdetectorAPI({
-    api_key: [YOUR_API_KEY],
-    secure: true //(Optional, defaults to true)
+```javascript
+const spamdetectorAPI = require('@apiverve/spamdetector');
+const api = new spamdetectorAPI({
+    api_key: '[YOUR_API_KEY]'
 });
 ```
 
 ---
 
+## Usage
+
+---
 
 ### Perform Request
-Using the API client, you can perform requests to the API.
 
-###### Define Query
+Using the API is simple. All you have to do is make a request. The API will return a response with the data you requested.
 
-```
+```javascript
 var query = {
   "text": "Can you please spare some change?! Desperate!!! Send cash",
   "email": "bankers@fre.323hotlain.net",
   "ip": "122.180.184.182"
 };
-```
 
-###### Simple Request (using Callback)
-
-```
 api.execute(query, function (error, data) {
     if (error) {
         return console.error(error);
@@ -66,9 +73,56 @@ api.execute(query, function (error, data) {
 });
 ```
 
-###### Example Response
+---
 
+### Using Promises
+
+You can also use promises to make requests. The API returns a promise that you can use to handle the response.
+
+```javascript
+var query = {
+  "text": "Can you please spare some change?! Desperate!!! Send cash",
+  "email": "bankers@fre.323hotlain.net",
+  "ip": "122.180.184.182"
+};
+
+api.execute(query)
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error(error);
+    });
 ```
+
+---
+
+### Using Async/Await
+
+You can also use async/await to make requests. The API returns a promise that you can use to handle the response.
+
+```javascript
+async function makeRequest() {
+    var query = {
+  "text": "Can you please spare some change?! Desperate!!! Send cash",
+  "email": "bankers@fre.323hotlain.net",
+  "ip": "122.180.184.182"
+};
+
+    try {
+        const data = await api.execute(query);
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+```
+
+---
+
+## Example Response
+
+```json
 {
   "status": "ok",
   "error": null,
@@ -81,8 +135,7 @@ api.execute(query, function (error, data) {
       "region": "DL"
     },
     "parsed": true
-  },
-  "code": 200
+  }
 }
 ```
 
@@ -95,6 +148,7 @@ Need any assistance? [Get in touch with Customer Support](https://apiverve.com/c
 ---
 
 ## Updates
+
 Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Twitter.
 
 ---
